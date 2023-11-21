@@ -155,7 +155,11 @@ fun ArtWorkImage(
         shadowElevation = 12.dp,
         modifier = modifier
     ) {
-        Image(painter = painterResource(id = imageResource), contentDescription = null, contentScale = ContentScale.Fit)
+        Image(
+            painter = painterResource(id = imageResource),
+            contentDescription = null,
+            contentScale = ContentScale.Fit
+        )
     }
 }
 
