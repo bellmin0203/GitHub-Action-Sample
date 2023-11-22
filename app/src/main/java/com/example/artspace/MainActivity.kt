@@ -56,7 +56,7 @@ fun ArtSpaceLayout() {
     var artWorkTitle by remember { mutableStateOf("Sample 1") }
     var artist by remember { mutableStateOf("Owen Scott") }
     var releaseYear by remember { mutableStateOf("2011") }
-    var curPos by remember { mutableStateOf(1) }
+    var curPos by remember { mutableStateOf(2) }
 
     Column(
         modifier = Modifier
