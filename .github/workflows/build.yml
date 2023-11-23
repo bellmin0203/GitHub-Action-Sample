@@ -76,7 +76,7 @@ jobs:
         timezone: Asia/Seoul
     
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew app:assemble
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
