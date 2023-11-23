@@ -77,3 +77,10 @@ jobs:
     
     - name: Build with Gradle
       run: ./gradlew build
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: android-artifact
+        path: app/build/outputs/apk
+        retention-days: 14
