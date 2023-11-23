@@ -60,3 +60,4 @@ jobs:
         with:
           name: android-artifact
           path: app/build/outputs/apk
+          retention-days: 14
