@@ -27,6 +27,11 @@ on:
         type: string
         required: true
         default: 'keystore.properties'
+    secrets:
+      KEYSTORE_BASE64:
+        required: true
+      KEYSTORE_PROPERTIES:
+        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
