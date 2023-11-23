@@ -11,9 +11,9 @@ jobs:
     uses: ./.github/workflows/test.yml
     with:
       java_ver: '17'
-      keystore_path: '.app/signing'
+      keystore_path: './app/signing'
       keystore_name: 'keystore.jks'
-      keystore_prop_path: '.app/signing'
+      keystore_prop_path: './app/signing'
       keystore_prop_name: 'keystore.properties'
     secrets:
       KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
