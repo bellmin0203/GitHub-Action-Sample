@@ -6,7 +6,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
-val keystorePropertiesFile = rootProject.file("keystore/keystore.properties")
+val keystorePropertiesFile = rootProject.file("app/signing/keystore.properties")
 val keystoreProperties = Properties()
 keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 
