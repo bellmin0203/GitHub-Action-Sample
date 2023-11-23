@@ -40,7 +40,7 @@ jobs:
     - name: Checkout Source
       uses: actions/checkout@v3
 
-    - name: set up JDK inputs.java_ver
+    - name: set up JDK ${{ inputs.java_ver }}
       uses: actions/setup-java@v3
       with:
         java-version: inputs.java_ver
