@@ -14,19 +14,19 @@ on:
       keystore_path:
         type: string
         required: true
-        default: ./app/signing
+        default: './app/signing'
       keystore_name:
         type: string
         required: true
-        default: keystore.jks
+        default: 'keystore.jks'
       keystore_prop_path:
         type: string
         required: true
-        default: ./app/signing
+        default: './app/signing'
       keystore_prop_name:
         type: string
         required: true
-        default: keystore.properties
+        default: 'keystore.properties'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
