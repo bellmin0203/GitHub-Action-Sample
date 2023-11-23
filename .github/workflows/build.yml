@@ -7,21 +7,24 @@ on:
     branches: [ "master" ]
 
 jobs:
+
+  build_setup:
+    name: Build Setup
+    # Build setting
+    uses: ./.github/workflows/build_setup.yml
+    with:
+      java_ver: '17'
+      keystore_path: './app/signing'
+      keystore_name: 'keystore.jks'
+      keystore_prop_path: './app/signing'
+      keystore_prop_name: 'keystore.properties'
+      
   # App test
   test:
     name: Test App
     runs-on: ubuntu-latest
 
     steps:
-    # Build setting
-    - uses: bellmin0203/android-build-setting@main
-      with:
-        java_ver: '17'
-        keystore_path: './app/signing'
-        keystore_name: 'keystore.jks'
-        keystore_prop_path: './app/signing'
-        keystore_prop_name: 'keystore.properties'
-
     # Test with Gradle
     - name: Test with Gradle
       run: ./gradlew :app:testDebug
@@ -42,15 +45,6 @@ jobs:
     needs: test
 
     steps:
-    # Build setting
-    - uses: bellmin0203/android-build-setting@main
-      with:
-        java_ver: '17'
-        keystore_path: './app/signing'
-        keystore_name: 'keystore.jks'
-        keystore_prop_path: './app/signing'
-        keystore_prop_name: 'keystore.properties'
-        
     # Notify MS Teams channel
     - uses: toko-bifrost/ms-teams-deploy-card@master
       if: always()
