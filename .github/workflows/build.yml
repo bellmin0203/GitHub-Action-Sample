@@ -14,7 +14,7 @@ jobs:
 
     steps:
     # Build setting
-    - uses: bellmin0203/android-build-setting@master
+    - uses: bellmin0203/android-build-setting@main
       with:
         java_ver: '17'
         keystore_path: './app/signing'
@@ -43,7 +43,7 @@ jobs:
 
     steps:
     # Build setting
-    - uses: ./.github/workflows/build_setting.yml
+    - uses: bellmin0203/android-build-setting@main
       with:
         java_ver: '17'
         keystore_path: './app/signing'
