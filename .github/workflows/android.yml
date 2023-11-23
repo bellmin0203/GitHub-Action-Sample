@@ -61,9 +61,9 @@ jobs:
         path: app/build/reports/tests/testDebugUnitTest/index.html
         retention-days: 14
     
-    - name: Build with Gradle
+    - name: Assemble with Gradle
       if: always()
-      run: ./gradlew build
+      run: ./gradlew app:assemble
 
     - name: Upload APK
       if: success()
