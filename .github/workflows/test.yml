@@ -68,6 +68,7 @@ jobs:
       run: |
         mkdir -p ${{ inputs.keystore_path }}
         mkdir -p ${{ inputs.keystore_prop_path }}
+        echo pwd
         echo '${{ secrets.KEYSTORE_BASE64 }}' | base64 -d > ${{ inputs.keystore_path }}/${{ inputs.keystore_name }}
         echo '${{ secrets.KEYSTORE_PROPERTIES }}' > ${{ inputs.keystore_prop_path }}/${{ inputs.keystore_prop_name }}
 
