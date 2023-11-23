@@ -62,9 +62,11 @@ jobs:
         retention-days: 14
     
     - name: Build with Gradle
+      if: always()
       run: ./gradlew build
 
     - name: Upload APK
+      if: always()
       uses: actions/upload-artifact@v3
       with:
         name: android-artifact
