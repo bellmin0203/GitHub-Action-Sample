@@ -23,6 +23,7 @@ jobs:
   test:
     name: Test App
     runs-on: ubuntu-latest
+    needs: build_setup
 
     steps:
     # Test with Gradle
