@@ -62,7 +62,7 @@ jobs:
 
     - name: Generate Keystore file from GitHub Secrets
       run: |
-        mkdir ${{ inputs.keystore_path }}
-        mkdir ${{ inputs.keystore_prop_path }}
+        mkdir -p ${{ inputs.keystore_path }}
+        mkdir -p ${{ inputs.keystore_prop_path }}
         echo '${{ secrets.KEYSTORE_BASE64 }}' | base64 -d > ${{ inputs.keystore_path }}/${{ inputs.keystore_name }}
         echo '${{ secrets.KEYSTORE_PROPERTIES }}' > ${{ inputs.keystore_path }}/${{ inputs.keystore_prop_name }}
