@@ -43,7 +43,7 @@ jobs:
     - name: set up JDK ${{ inputs.java_ver }}
       uses: actions/setup-java@v3
       with:
-        java-version: inputs.java_ver
+        java-version: ${{ inputs.java_ver }}
         distribution: 'temurin'
         cache: gradle
 
