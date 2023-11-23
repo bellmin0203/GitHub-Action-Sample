@@ -1,0 +1,29 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  test:
+    name: Test
+    uses: ./.github/workflows/test.yml
+    with:
+      java_ver: '17'
+      keystore_path: './app/signing'
+      keystore_name: 'keystore.jks'
+      keystore_prop_path: './app/signing'
+      keystore_prop_name: 'keystore.properties'
+
+  build:
+    name: Build
+    needs: test
+    uses: ./.github/workflows/build.yml
+    with:
+      java_ver: '17'
+      keystore_path: './app/signing'
+      keystore_name: 'keystore.jks'
+      keystore_prop_path: './app/signing'
+      keystore_prop_name: 'keystore.properties'
