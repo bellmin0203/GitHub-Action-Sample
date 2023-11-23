@@ -15,6 +15,9 @@ jobs:
       keystore_name: 'keystore.jks'
       keystore_prop_path: '.app/signing'
       keystore_prop_name: 'keystore.properties'
+    secrets:
+      KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+      KEYSTORE_PROPERTIES: ${{ secrets.KEYSTORE_PROPERTIES }}
 
   build:
     needs: test
@@ -25,6 +28,9 @@ jobs:
       keystore_name: 'keystore.jks'
       keystore_prop_path: '.app/signing'
       keystore_prop_name: 'keystore.properties'
+    secrets:
+      KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+      KEYSTORE_PROPERTIES: ${{ secrets.KEYSTORE_PROPERTIES }}
       
   # build:
   #   runs-on: ubuntu-latest
